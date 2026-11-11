@@ -1,0 +1,64 @@
+﻿<Window x:Class="DairyPlant.Authorization"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DairyPlant"
+        mc:Ignorable="d"
+        Title="Авторизация" MinWidth="350" MinHeight="200"
+        Height="600" Width="450" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="100"/>
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Column="1" Grid.Row="1" HorizontalAlignment="Center" Text="Вход в систему" VerticalAlignment="Top" FontSize="26"/>
+        <Grid Grid.Column="1" Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <TextBlock Grid.Column="0" Grid.Row="0" Text="Логин:" Margin="0,0,5,0" FontSize="16" VerticalAlignment="Center"/>
+            <TextBox x:Name="LoginBox" Grid.Column="1" Grid.Row="0" FontSize="16" VerticalAlignment="Center"/>
+            <TextBlock Grid.Column="0" Grid.Row="1" Text="Пароль:" Margin="0,0,5,0" FontSize="16" VerticalAlignment="Center"/>
+            <PasswordBox x:Name="PasswordBox" Grid.Column="1" Grid.Row="1" FontSize="16" VerticalAlignment="Center"/>
+        </Grid>
+        <Grid Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="3" HorizontalAlignment="Center">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <TextBlock Grid.Row="0" Text="Соберите пазл-капчу для входа в программу" Margin="0,0,0,10" FontSize="16"/>
+            <Grid Grid.Row="1" Width="200" Height="200" HorizontalAlignment="Center">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Image x:Name="Puzzle1" Grid.Column="0" Grid.Row="0" Source="/images/img1.png" AllowDrop="True" MouseLeftButtonDown="Puzzle_MouseLeftBtnDown" Drop="Puzzle_Drop"/>
+                <Image x:Name="Puzzle2" Grid.Column="1" Grid.Row="0" Source="/images/img2.png" AllowDrop="True" MouseLeftButtonDown="Puzzle_MouseLeftBtnDown" Drop="Puzzle_Drop"/>
+                <Image x:Name="Puzzle3" Grid.Column="0" Grid.Row="1" Source="/images/img3.png" AllowDrop="True" MouseLeftButtonDown="Puzzle_MouseLeftBtnDown" Drop="Puzzle_Drop"/>
+                <Image x:Name="Puzzle4" Grid.Column="1" Grid.Row="1" Source="/images/img4.png" AllowDrop="True" MouseLeftButtonDown="Puzzle_MouseLeftBtnDown" Drop="Puzzle_Drop"/>
+            </Grid>
+            <Button x:Name="BtnLogin" Grid.Row="2" Content="Войти" Width="150" Height="25" Margin="0,5,0,0" Click="BtnLogin_Click" HorizontalAlignment="Center" FontSize="16"/>
+        </Grid>
+        
+        
+    </Grid>
+</Window>

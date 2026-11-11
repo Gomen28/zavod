@@ -1,0 +1,30 @@
+﻿<Window x:Class="DairyPlant.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DairyPlant"
+        mc:Ignorable="d"
+        Title="Рабочий стол" MinHeight="200" MinWidth="150" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" Orientation="Horizontal" Height="50">
+            <Button x:Name="BtnCreate" Content="Создать" Width="150" Height="25" Margin="20,0,0,0" Click="BtnCreate_Click" FontSize="14"/>
+            <Button x:Name="btnEdit" Content="Редактировать" Width="150" Height="25" Margin="20,0,0,0" Click="BtnEdit_Click" FontSize="14"/>
+            <Button x:Name="BtnValidation" Content="Валидация данных" Width="150" Height="25" Margin="20,0,0,0" FontSize="14" Click="BtnValidation_Click"/>
+        </StackPanel>
+        <DataGrid x:Name="dgUsers" Grid.Row="1" CellEditEnding="DgUsers_CellEditEnding" AutoGenerateColumns="False" HorizontalAlignment="Stretch">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Binding="{Binding id_user}" Width="*" IsReadOnly="True"/>
+                <DataGridTextColumn Header="Имя" Binding="{Binding name}" Width="4*" IsReadOnly="True"/>
+                <DataGridTextColumn Header="Логин" Binding="{Binding login}" Width="3*" IsReadOnly="True"/>
+                <DataGridTextColumn Header="Пароль" Binding="{Binding password}" Width="3*" IsReadOnly="True"/>
+                <DataGridTextColumn Header="Роль" Binding="{Binding role}" Width="3*" IsReadOnly="True"/>
+                <DataGridCheckBoxColumn Header="Заблокирован" Binding="{Binding is_blocked, UpdateSourceTrigger=PropertyChanged}" Width="2*"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Window>
